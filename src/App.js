@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router,Route} from "react-router-dom";
+import {Provider} from 'react-redux';
+import {createStore,applyMiddleware} from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import {composeWithDevTools} from 'redux-devtools-extension';
+import reducers from './store/reducers';
+import rootSaga from '../src/store/sagas';
+import Images from './component/images/images';
+import Categories from './component/categories/categories'
+import Navlink from './component/navlink/navlink';
+import axios from 'axios';
+const sagaMiddleware =createSagaMiddleware();
+const store=createStore(reducers,composeWithDevTools(applyMiddleware(sagaMiddleware)));
+sagaMiddleware.run(rootSaga);
+const result=axios.get('http://localhost:3000/images');
 
-function App() {
-  return (
+
+const App=()=>(
+  
+    <Provider store={store}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navlink />
+        <Route exact path="/" component={Images} />
+        <Route exact path="/photo/:id" component={Images} />
+        <Route exact path="/categories" component={Categories} />
+        <Route exact path="/category/:id" component={Categories} />
+      </Router>
     </div>
-  );
-}
+    </Provider>
+  
+);
 
 export default App;
