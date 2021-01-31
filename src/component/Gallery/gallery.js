@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { ButtonCategory, NavLink, InputCategory,Image,Container} from "./galleryStyle";
+import { ButtonCategory, NavLink, InputCategory,Image,Container,CategoriesContainer} from "./galleryStyle";
 import photo from '../../styles/portfolioimg2.jpg';
 import Categories from '../categories/categories';
 const Gallery = () => {
@@ -7,6 +7,7 @@ const Gallery = () => {
  
   return (
     <Container>
+      <CategoriesContainer>
       <ButtonCategory onClick={()=>setShow(!show)} >
           FIND CATEGORIES HERE{" "}
       </ButtonCategory>
@@ -15,7 +16,7 @@ const Gallery = () => {
         <Categories />
         :
         ''}
-
+      </CategoriesContainer>
       <NavLink exact to="/">
         <Image src={photo}/>
       </NavLink>
