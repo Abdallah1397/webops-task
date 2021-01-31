@@ -2,11 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getAllImageRequest } from "../../store/actions/all_Image";
 import { connect } from "react-redux";
-
+import {
+  Image,
+  SearchDiv,
+  ImageDiv,
+  Title,
+  Button,
+  SearchBar,
+  Container,
+} from "./imageStyle";
 const ImageDetail = ({ image, getImageID }) => {
   const [ImgDetail, setImgDetail] = useState([]);
   const params = useParams();
-  console.log(image, "toot");
+  console.log(image, "hi");
   useEffect(() => {
     getImageID();
     const result = image.filter((item) => {
@@ -16,16 +24,16 @@ const ImageDetail = ({ image, getImageID }) => {
   }, []);
 
   return (
-    <div>
+    <ImageDiv>
       {ImgDetail.map((i) => {
         return (
           <div  key={i.id}>
-            <p >{i.id}</p>
-            <img src={i.image} />
+            <Title >{i.id}</Title>
+            <Image src={i.image} />
           </div>
         );
       })}
-    </div>
+    </ImageDiv>
   );
 };
 const mapStateToProps = (state) => ({
