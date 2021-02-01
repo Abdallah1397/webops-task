@@ -11,7 +11,7 @@ const Navlink=()=>{
         <div>
         <Nav>
             <Bar onClick={handleClick}>
-                <Icon className={click ? 'fa fa-times' : 'fa fa-bars'}/>
+                <Icon className={click ? 'fa fa-times fa-2x' : 'fa fa-bars fa-2x'}/>
             </Bar>  
             <AbsoluteLogo src={logo}/>
             <Menu click={click}>
@@ -22,7 +22,7 @@ const Navlink=()=>{
             <Logo src={logo}/> 
             <Menu click={click}>
             <NavLink exact to="#">VENDORS</NavLink>
-            <NavLink exact to="/gallery">GALLERY</NavLink>
+            <NavLink exact to="/gallery" onClick={()=>{setClick(!click)}}>GALLERY</NavLink>
             <NavLink exact to="#">IDEAS&MORE</NavLink> 
             </Menu>
         </Nav>

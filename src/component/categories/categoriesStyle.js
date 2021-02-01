@@ -22,6 +22,12 @@ display:inline-block;
 
 
 `;
+export const Icon =Styled.i`
+margin-left:12px;
+@media(max-width:800px){
+  margin-top:20px;
+}
+`;
 
 export const MainDiv=Styled.div`
 background-color:#000;

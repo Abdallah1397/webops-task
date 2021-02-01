@@ -1,12 +1,10 @@
 import Styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
-import px2vw from "../../styles/px2vw";
-
 export const Logo = Styled.img`
 align-items: center;
 width:70px;
 height:70px;
-margin-top:10;
+margin-left:1%;
 @media(max-width:768px){
 display:none;
 }
@@ -25,13 +23,13 @@ margin-left:25%;
 @media (max-width:768px){
   margin-left:10px;
 }
-@media (min-width: 769px) and (max-width:935px)
+@media (min-width: 769px) and (max-width:990px)
 {
   margin-left:20%;
 }
-@media (min-width: 935px) and (max-width:1300px)
+@media (min-width: 991px) and (max-width:1300px)
 {
-margin-left:15%;
+margin-left:12%;
 }
 
 `;
@@ -55,14 +53,19 @@ font-size: 0.9rem;
 `;
 export const Menu = Styled.div`
   display: flex;
+  margin-left:1%;
   align-items: center;
   position: relative;
+  border-top:2px solid black;
+  border-bottom:2px solid black;
+
   @media (max-width: 768px) {
     overflow: hidden;
     flex-direction: column;
     max-height: ${({ click }) => (click ? "100%" : "0")};
     transition: max-height 0.3s ease-in;
     width: 100%;
+    border:none;
   }
 `;
 export const Bar = Styled.div`

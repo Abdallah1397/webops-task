@@ -2,40 +2,40 @@
     "categories":[
     {
         "id":1,
-        "title":"Designer",
-        "icon":""
+        "title":"Our Books",
+        "icon":"fa fa-address-book fa-lg"
     },
     {
         "id":2,
-        "title":"Designer",
-        "icon":""  
+        "title":"Our Language",
+        "icon":"fa fa-american-sign-language-interpreting fa-lg"  
     },{
         "id":3,
-        "title":"Designer",
-        "icon":""  
+        "title":"Flask",
+        "icon":"fa fa-flask fa-lg"  
     },{
         "id":4,
         "title":"Designer",
-        "icon":""  
+        "icon":"fa fa-briefcase fa-lg"  
     },{
         "id":5,
-        "title":"Designer",
-        "icon":""  
+        "title":"Cubes",
+        "icon":"fa fa-cubes fa-lg"  
     },{
         "id":6,
-        "title":"Designer",
-        "icon":""  
+        "title":"License",
+        "icon":"fa fa-drivers-license-o fa-lg"  
     }
 ],"images": [{
     "id": 1,
     "image": "/images/portfolio-img1.jpg",
-    "title":"Title",
+    "title":"tit",
     "categories_id":1
 },
 {
     "id": 2,
     "image": "/images/portfolio-img2.jpg",
-    "title":"Title",
+    "title":"tit1",
     "categories_id":1
     
 },
@@ -48,7 +48,7 @@
 {
     "id": 4,
     "image": "/images/portfolio-img4.jpg",
-    "title":"Title",
+    "title":"titl2",
     "categories_id":2
 },
 {

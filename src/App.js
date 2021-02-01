@@ -11,6 +11,7 @@ import Navlink from './component/Navbar/navbar';
 import ImageDetails from './component/images/imageDetail'
 import CategoriesDetails from './component/categories/categoriesDetails';
 import Gallery from './component/Gallery/gallery'
+import Footer from './component/footer/footer'
 const sagaMiddleware =createSagaMiddleware();
 const store=createStore(reducers,composeWithDevTools(applyMiddleware(sagaMiddleware)));
 sagaMiddleware.run(rootSaga);
@@ -29,6 +30,7 @@ const App=()=>(
         <Route exact path="/category/:id" component={CategoriesDetails} />
         <Route exact path="/gallery" component={Gallery}/>
       </Router>
+      <Footer />
 
     </div>
     </Provider>

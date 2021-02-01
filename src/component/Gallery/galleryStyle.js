@@ -1,5 +1,4 @@
 import Styled from "styled-components";
-import px2vw from "../../styles/px2vw";
 import { NavLink as Link } from "react-router-dom";
 
 export const Container =Styled.div`
@@ -12,6 +11,7 @@ margin-left:10%;
 }
 `;
 export const CategoriesContainer=Styled.div`
+margin-left:-5%;
 @media (max-width: 450px) 
 {
     margin-top:30%;
@@ -20,6 +20,14 @@ export const CategoriesContainer=Styled.div`
 @media (min-width:451px) and (max-width: 786px){
     margin-top:20%;
 }
+@media (min-width:1200px) and (max-width: 1300px){
+    margin-left:-20%;    
+}
+`;
+export const Title=Styled.h2`
+font-size:30px;
+font-family: 'Arial Narrow Bold';
+margin-left:10%;
 `;
 export const ButtonCategory = Styled.button`
     border:2px solid black;
@@ -40,7 +48,7 @@ export const ButtonCategory = Styled.button`
         font-size:7px;
 
     }
-    @media (min-width:451px) and (max-width: 935px) 
+    @media (min-width:451px) and (max-width: 1200px) 
     {
         margin-top:5%;
         width:45%;
@@ -68,7 +76,7 @@ export const InputCategory = Styled.input`
         margin-left:1%;
         font-size:7px;
     }
-    @media (min-width:451px) and (max-width: 935px) 
+    @media (min-width:451px) and (max-width: 1200px) 
     {
         margin-top:5%;
         width:45%;
@@ -80,44 +88,30 @@ export const InputCategory = Styled.input`
     `;
 
 export const NavLink = Styled(Link)`
-    display:block;
-    cursor:pointer;
+width:30%;
+display:inline-block;
+margin-left:3%;
+@media (max-width: 450px) 
+{
+    
+    width:80%;
     margin-left:10%;
-    @media (max-width: 450px) 
-    {
-        font-family:bold;
-        font-size:9px;
-        width:200px;
-    }  
-    @media (min-width:451px) and (max-width: 786px) 
-    {
-        width:100%;
-        height:60px;
-        margin-left:2%;
-        font-size:15px;
-        
-    }
+
+ }
+ @media (min-width: 451px) and (max-width: 768px)
+{
+    
+    width:45%;
+    hieght:200px;
+    margin-left:5%
+ }
     `;
 export const Image=Styled.img`
-    width:40%;
-    height:40%;
-    display:block;
+    width:100%;
+    hieght:200px;
+    margin-left:3%;
     margin-top:2%;
-    margin-left:20px;
-    @media (max-width: 450px) 
-    {
-        width:90%;
-        height:90%;
-        margin-left:.5%;
-        margin-top:2%;
-    }
-    @media (min-width:451px) and (max-width: 786px) 
-    {
-        width:400px;
-        height:400px;
-        margin-top:2%   
-        margin-left:-5%;
-    }
-
+    float:left;
     `;
+ 
 

@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { ButtonCategory, NavLink, InputCategory,Image,Container,CategoriesContainer} from "./galleryStyle";
+import { ButtonCategory, NavLink, InputCategory,Image,Container,Title,CategoriesContainer} from "./galleryStyle";
 import photo from '../../styles/portfolioimg2.jpg';
 import Categories from '../categories/categories';
 const Gallery = () => {
@@ -20,6 +20,8 @@ const Gallery = () => {
       <NavLink exact to="/">
         <Image src={photo}/>
       </NavLink>
+      <Title> All Image </Title>
+
     </Container>
   );
 };
