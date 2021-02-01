@@ -24,6 +24,7 @@ margin-left:-5%;
     margin-left:-20%;    
 }
 `;
+
 export const Title=Styled.h2`
 font-size:30px;
 font-family: 'Arial Narrow Bold';
@@ -58,33 +59,64 @@ export const ButtonCategory = Styled.button`
         text-align:center;
     }
     `;
+export const Icon =Styled.i`
+        margin-left:12px;
+        @media(max-width:800px){
+        margin-top:20px;
+        }
+`;
+export const Form =Styled.form`
+width:30%;
+display:inline-block;
+height:50px;
+
+
+@media (max-width: 450px) 
+{
+    margin-top:1%;
+    width:48%;
+    height:40px;
+    margin-left:1%;
+    font-size:7px;
+}
+@media (min-width:451px) and (max-width: 1200px) 
+{
+    margin-top:5%;
+    width:45%;
+    height:60px;
+    margin-left:1%;
+    font-size:10px;
+    
+}
+
+`;
 export const InputCategory = Styled.input`
     border:2px solid black;
-    margin-top:10%;
     background-color:#fff;
-    width:30%;
-    height:50px;
+    width:100%;
+    height:100%;
     text-align:center;
     font-family:bold;
     margin-left:2px;
     font-size:20px;
     @media (max-width: 450px) 
-    {
-        margin-top:1%;
-        width:48%;
-        height:40px;
-        margin-left:1%;
-        font-size:7px;
-    }
-    @media (min-width:451px) and (max-width: 1200px) 
-    {
-        margin-top:5%;
-        width:45%;
-        height:60px;
-        margin-left:1%;
-        font-size:10px;
-        
-    }
+{
+    margin-top:1%;
+    width:100%;
+    height:40px;
+    margin-left:1%;
+    font-size:7px;
+}
+@media (min-width:451px) and (max-width: 1200px) 
+{
+    margin-top:5%;
+    width:100%;
+    height:60px;
+    margin-left:1%;
+    font-size:10px;
+    
+}
+   
     `;
 
 export const NavLink = Styled(Link)`

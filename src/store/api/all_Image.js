@@ -1,5 +1,5 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const getAllImage=()=>{
-    return axios.get('http://localhost:3000/images');
+export const getAllImage = () => {
+  return axios.get("http://localhost:3000/images");
 };

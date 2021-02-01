@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAllImageRequest } from "../../store/actions/all_Image";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
-import { MainDiv,Image,Title,Container } from "./categoriesDetailStyle";
+import { MainDiv, Image, Title, Container } from "./categoriesDetailStyle";
 
 const CategoriesDetails = ({ image, getImage }) => {
   const params = useParams();
@@ -23,9 +23,9 @@ const CategoriesDetails = ({ image, getImage }) => {
       {category.map((i) => {
         return (
           <Container>
-           
             <Image src={i.image} />
-            <Title>ID :  {i.id}</Title>
+            <Title>Name :{i.title}</Title>
+            <Title>Category : {i.categories_id}</Title>
           </Container>
         );
       })}

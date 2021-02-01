@@ -16,16 +16,16 @@ const Images = ({ image, getImage }) => {
   useEffect(() => {
     getImage();
   }, []);
+
   const [currentPage, setCurrentPage] = useState(1);
-  const [photoPerPage, setPhotoPerPage] = useState(3);
+  const [photoPerPage, setPhotoPerPage] = useState(6);
   const indexOfLastPage = currentPage * photoPerPage;
   const indexOfFirstPage = indexOfLastPage - photoPerPage;
   const currentPhotos = image.slice(indexOfFirstPage, indexOfLastPage);
   const total = image.length;
-  console.log(total);
-  console.log(image);
+
   const paginate = (pageNum) => setCurrentPage(pageNum);
-  const [searchImage, setSearchImage] = useState("");
+  const [searchImage, setSearchImage] = useState([]);
   const [submited, setSubmited] = useState(false);
 
   const displayAllImage = currentPhotos.map((item) => {
@@ -42,7 +42,7 @@ const Images = ({ image, getImage }) => {
     e.preventDefault();
     const value = e.target.value;
     setSearchImage(value);
-    if (value == ''){
+    if (value == "") {
       setSubmited(false);
     }
   };
@@ -52,14 +52,19 @@ const Images = ({ image, getImage }) => {
     const result = image.filter((item) => {
       return item.title == searchImage;
     });
-    console.log(result, "submited");
-    setSearchImage(result[0]);
+    setSearchImage(result);
   };
   const Searched = () => {
     return (
       <ImageDiv>
-        <Image src={searchImage.image} />
-        <Title>{searchImage.title}</Title>
+        {searchImage.length != 0 ? (
+          <>
+            <Image src={searchImage[0].image} />
+            <Title>{searchImage[0].title}</Title>
+          </>
+        ) : (
+          <Title>No Data Found</Title>
+        )}
       </ImageDiv>
     );
   };

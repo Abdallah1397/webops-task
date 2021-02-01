@@ -20,21 +20,29 @@ const Pagination = ({ photoPerPage, totalPhotos, paginate }) => {
 export default Pagination;
 const NavList = Styled.nav`
         display:block;
-        width:70%;
+        width:65%;
         height:50%;
         overflow: hidden;
         position: relative;
         overflow: hidden;
-        margin-left:auto;
-        margin-right:auto;
-        padding-top:5%;
-        padding-left:10%;
-
+        margin-left:35%;
+        @media (max-width: 450px) 
+        {
+            width:80%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        @media (min-width: 451px) and (max-width: 900px)
+        {
+            width:80%;
+            margin-left:20%;
+        }
         `;
 
 const ItemList = Styled.li`
-        display: inline-block;
-        float:left;
+         display: inline-block;
+         float:left;
+         margin-left:2px;
         `;
 
 const PageNum = Styled.a`
@@ -59,7 +67,18 @@ const PageNum = Styled.a`
         background-color:#000;
         color:#fff;
         }
-
-
+        @media (max-width: 450px) 
+        {
+            width:1%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        @media (min-width: 451px) and (max-width:900px) 
+        {
+        
+            margin-left:1%;
+          
+        }
 
     `;
+        
