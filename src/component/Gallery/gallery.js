@@ -9,8 +9,7 @@ import {
   Container,
   Title,
   CategoriesContainer,
-  Form,
-  Icon
+  Form
 } from "./galleryStyle";
 import photo from "../../styles/portfolioimg2.jpg";
 import Categories from "../categories/categories";
@@ -60,7 +59,7 @@ const Gallery = ({ categories, getCategories }) => {
     <Container>
       <CategoriesContainer>
         <ButtonCategory onClick={() => setShow(!show)}>
-          FIND CATEGORIES HERE{" "}
+          FIND CATEGORIES HERE <i className={show ?'fa fa-caret-up fa-lg':'fa fa-caret-down fa-lg' } />
         </ButtonCategory>
         <Form onSubmit={handleSubmit}>
           <InputCategory

@@ -1,11 +1,55 @@
 import React, { useState } from "react";
-import { Nav, NavLink, Logo, Menu, Bar, Icon, AbsoluteLogo } from "./navStyle";
+import {
+  Nav,
+  NavLink,
+  Logo,
+  Menu,
+  Bar,
+  Icon,
+  AbsoluteLogo,
+  List,
+  DropDownItem,
+  DropDownList,
+  GalleryNavLink
+} from "./navStyle";
 import logo from "../../styles/logo360.png";
 import reduxSaga from "redux-saga";
-/**/
+
 const Navlink = () => {
+  const SubMenu = () => {
+    return (
+      <DropDownList>
+          <DropDownItem>
+          <GalleryNavLink
+            exact
+            to="/"
+            onClick={() => {
+              setClick(!click);
+            }}
+          >
+            ALL IMAGES
+          </GalleryNavLink>
+        </DropDownItem>
+        <DropDownItem>
+          <GalleryNavLink
+            exact
+            to="/gallery"
+            onClick={() => {
+              setClick(!click);
+            }}
+          >
+            MORE
+          </GalleryNavLink>
+        </DropDownItem>
+
+      </DropDownList>
+    );
+  };
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+  const [dropDown, setDropDown] = useState(false);
+  const handleDropDown = () => setDropDown(!dropDown);
+
   return (
     <div>
       <Nav>
@@ -29,15 +73,13 @@ const Navlink = () => {
           <NavLink exact to="#">
             VENDORS
           </NavLink>
-          <NavLink
-            exact
-            to="/gallery"
-            onClick={() => {
-              setClick(!click);
-            }}
-          >
-            GALLERY
-          </NavLink>
+
+          <List onClick={handleDropDown}>
+            GALLERY{" "}
+            <i className={dropDown ? "fa fa-caret-up" : "fa fa-caret-down"} />
+            {dropDown ? <SubMenu /> : ""}
+          </List>
+
           <NavLink exact to="#">
             IDEAS&MORE
           </NavLink>

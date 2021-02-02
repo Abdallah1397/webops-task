@@ -33,6 +33,58 @@ margin-left:12%;
 }
 
 `;
+export const List =Styled.li`
+list-style-type: none;
+`;
+export const DropDownItem=Styled.li`
+height:40px;
+border-top:2px solid black;
+width:100%;
+margin-bottom:3px;
+margin-left:-15%;
+@media (max-width: 768px){
+  position:block;
+  height:20px;
+border-top:1px solid black;
+width:100%;
+margin-bottom:none;
+margin-left:none;
+border:none;
+
+}
+`;
+export const DropDownList=Styled.ul`
+list-style-type: none;
+margin-top:50px;
+width:50%;
+height:100px;
+top: 0;
+position: absolute;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+@media (max-width: 768px){
+  position: relative;
+  box-shadow:none;
+  width:100%;
+  margin-top:1px;
+}
+`;
+export const GalleryNavLink=Styled(Link)`
+font-size:30px;
+cursor: pointer;
+text-decoration: none;
+color:#000;
+width:100%;
+font-family:courier;
+@media (max-width: 768px){
+  font-size:15px;
+cursor: pointer;
+text-decoration: none;
+color:#000;
+width:100%;
+font-family:Impact;
+
+}
+`;
 export const NavLink = Styled(Link)`
 padding: 1rem 2rem;
 cursor: pointer;
